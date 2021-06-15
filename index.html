@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Louisiana Password Generator</title>
+    <meta name="description" content="">
+    <meta name="author" content="Stephen Hebert">
+
+    <!-- <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css"> //-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="style.css"> //-->
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		
+		div {
+			margin: 0 auto;
+			width: 900px;
+			text-align: center;
+		}
+		
+		h3 {
+			font-family: 'Love Ya Like A Sister', cursive;
+			font-size: 5em;
+		}
+		
+	</style>
+
+</head>
+
+<body>
+	<div>
+		<h3 id="password"></h3>
+	</div>
+
+
+<script>
+
+	let adjectives = [
+		"Hungry",
+		"Thirsty",
+		"Spicy",
+		"Muddy",
+		"Murky",
+		"Dancing",
+		"Jazzy",
+		"Swinging",
+		"Hot",
+		"Humid",
+		"Canaille",
+		"Coastal",
+		"Relaxed",
+		"Cultured",
+		"Fightin",
+		"Ragin",
+		"Southern",
+		"Tipsy"
+	];
+	
+	let nouns = [
+		"Tiger",
+		"Jaguar",
+		"Saint",
+		"Alligator",
+		"Cajun",
+		"Pelican",
+		"Babycake",
+		"Reveler",
+		"Gumbo",
+//		"Jambalaya",
+//		"Lagniappe",
+		"Pirogue",
+		"Crawfish",
+		"Catfish",
+		"HotSauce",
+//		"CouchonDuLait",
+//		"Atchafalaya",
+//		"MardiGras",
+		"River",
+		"Swamp",
+		"Moss",
+		"Oak",
+		"Fern",
+//		"GrisGris",
+		"Fiddle",
+//		"Accordion",
+		"Cypress",
+//		"Camp",
+		"Levee",
+		"Praline",
+		"Roux",
+//		"Rice",
+//		"Creole",
+//		"Zydeco",
+		"Andouille",
+		"Heron",
+		"Egret",
+		"Bayou",
+		"Beignet",
+//		"Piquant",
+//		"Bisque",
+//		"Etoufee",
+		"Boudin",
+//		"Bourre",
+//		"Petanque",
+//		"CafeAuLait",
+		"Cayenne",
+//		"Chicory",
+//		"CousCous",
+//		"File",
+//		"Tasso",
+//		"VieuxCarre",
+		"Houseboat",
+//		"DeerStand",
+//		"DuckBlind",
+		"Riverboat",
+		"Nutria"
+	];	
+	
+	function getRandom(array) {
+		return array[(Math.floor(Math.random() * array.length))];
+	}	
+	
+	function generatePassword() {
+	
+		let adjective = getRandom(adjectives);
+		let noun = getRandom(nouns);
+		let number1 = (Math.floor(Math.random() * 10));
+		let number2 = (Math.floor(Math.random() * 10));
+		
+		return `${adjective}${noun}${number1}${number2}`;
+	
+	}
+
+	document.getElementById("password").innerText = generatePassword();
+
+
+</script>
+
+</body>
+
+</html>
